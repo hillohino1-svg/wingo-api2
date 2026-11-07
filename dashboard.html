@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>Wingo Tracker</title>
+
+<style>
+
+body{
+background:#111827;
+color:white;
+font-family:Arial;
+padding:15px;
+}
+
+.card{
+background:#1f2937;
+padding:15px;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+td,th{
+padding:10px;
+text-align:center;
+border-bottom:1px solid #333;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Total Stored History</h2>
+
+<h3>{{ rows|length }}</h3>
+
+</div>
+
+<div class="card">
+
+<table>
+
+<tr>
+<th>Issue</th>
+<th>Number</th>
+<th>Color</th>
+<th>Time</th>
+</tr>
+
+{% for row in rows %}
+
+<tr>
+<td>{{row.issue}}</td>
+<td>{{row.number}}</td>
+<td>{{row.color}}</td>
+<td>{{row.created_at}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
